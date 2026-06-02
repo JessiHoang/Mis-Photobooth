@@ -1,24 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title> Sign Up </title>
-    </head>
-    <body>
-       <div class="signup-box" >
-        <h2> Sign Up </h2>
-        <form>
-            <input type="text" placeholder="Username" required>
-            <input type="email" placeholder="Email" required>
-            <input type="password" placeholder="Password" required>
-            <input type="password" placeholder="Confirm Password" required>
-            <button type="submit">Create Account</button>
-        </form>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Sign Up Page</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="min-h-screen flex flex-col">
+    <header>
+        <nav class="max-w-7xl mx-auto px-4 py-4 flex justify-center">
+            <img 
+            src="/img/logoMipink.png" 
+            alt="Mi's Photobooth LOGO"
+            class="h-16 sm:h-20 md:h-24 object-contain"/>
+        </nav>
+    </header>
+    <main class=" flex justify-center ">
+       <form class="bg-pink-50 border border-pink-200 rounded- px-6 py-4">
+            <h2 class=" flex justify-center text-2xl mb-3"> Sign Up </h2> 
+            <div>
+                <label for="name">
+                Name:   
+                </label>
+                <input 
+                    type="text" 
+                    placeholder="Name" 
+                    required
+                    class="border border-pink-200 rounded-xl px-5 text-sm sm:text-base focus:ring-1 focus:ring-pink-400 outline-none mb-3"
+                >
+            </div>
+            <div>
+                <label for="email">
+                Email: 
+                </label>
+                
+                <input 
+                    type="email" 
+                    placeholder="Email" 
+                    required
+                    class="border border-pink-200 rounded-xl px-5 text-sm sm:text-base focus:ring-1 focus:ring-pink-400 outline-none mb-3"
+                >
+            </div>
+            <div>
+
+             <label for="password">
+               Password:
+                </label>
+            <br>
+            <input 
+                type="password" 
+                placeholder="Password" 
+                required 
+                class="border border-pink-200 rounded-xl px-5 text-sm sm:text-base focus:ring-1 focus:ring-pink-400 outline-none"
+            >
+            <br>
+            <input 
+                type="password" 
+                placeholder="Confirm Password" 
+                required
+                class="border border-pink-200 rounded-xl px-5 text-sm sm:text-base focus:ring-1 focus:ring-pink-400 outline-none mb-3"
+            >
+            
+            <button 
+                type="submit" 
+                class="bg-[#ffa2c6] text-white hover:bg-pink-100 hover:text-pink-300 font-semibold py-3 px-4 rounded-xl transition text-sm sm:text-base mb-3 ">
+                Create Account
+            </button>
        </div>
-
-       <p> <a href="/src/app/components/start/start.html"> sign in :P </a> </p>
-
+         <p> <a href="/src/app/components/signin/signin.html"
+                class=" text-[#ffa2c6] underline text-sm sm:text-base leading-none h-full flex items-center mb-3"> sign in </a> </p>
+     </form>
+    </main>
+     <footer class="border-t border-gray-200 mt-10 pt-6 flex justify-center">
+        <p class=""> Copyright © 2026 Mi Hoang </p> 
+    </footer>
     </body>
 
 </html>
