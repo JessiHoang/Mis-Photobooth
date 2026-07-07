@@ -1,12 +1,18 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-signin',
+  selector: 'app-signup',
   imports: [],
-  templateUrl: './signin.html',
-  styleUrl: './signin.scss',
+  templateUrl: './signup.html',
+  styleUrl: './signup.scss',
 })
 
-export class Signup  {
+export class SignupComponent  {
+  constructor(private router: Router) {}
 
+  signup() {
+    // API + MongoDB
+    this.router.navigate(['/signin']);
+  }
 }
