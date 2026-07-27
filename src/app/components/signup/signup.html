@@ -13,7 +13,11 @@
     <!-- Header -->
     <header>
         <nav class="max-w-7xl mx-auto px-4 py-4 flex justify-center">
-            <img src="/img/logoMipink.png" alt="Mi's Photobooth LOGO" class="h-16 sm:h-20 md:h-24 object-contain" />
+            <img 
+            src="/public/img/logoMipink.png" 
+            alt="Mi's Photobooth LOGO" 
+            class="h-16 sm:h-20 md:h-24 object-contain" 
+            />
         </nav>
     </header>
 
@@ -55,22 +59,19 @@
 
                 <input type="password" placeholder="Password" required
                     class="w-full border border-pink-200 rounded-xl px-4 py-2 mb-3 text-sm sm:text-base focus:ring-1 focus:ring-pink-400 outline-none">
-
                 <input type="password" placeholder="Confirm Password" required
                     class="w-full border border-pink-200 rounded-xl px-4 py-2 text-sm sm:text-base focus:ring-1 focus:ring-pink-400 outline-none">
             </div>
 
             <!-- Button -->
-            <button type="submit"
+            <button type="button" (click)="signup()"
                 class="w-full bg-[#ffa2c6] text-white hover:bg-pink-100 hover:text-pink-300 font-semibold py-3 px-4 rounded-xl transition text-sm sm:text-base mb-4">
                 Create Account
             </button>
 
             <!-- Link to the SignIn Page -->
             <p class="text-center">
-                <a href="/src/app/components/signin/signin.html" class="text-[#ffa2c6] underline text-sm sm:text-base">
-                    sign in
-                </a>
+               <a routerLink="/signin">sign in</a>
             </p>
 
         </form>
