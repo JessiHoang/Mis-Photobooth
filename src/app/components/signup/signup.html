@@ -14,7 +14,7 @@
     <header>
         <nav class="max-w-7xl mx-auto px-4 py-4 flex justify-center">
             <img 
-            src="/public/img/logoMipink.png" 
+            src="/img/logoMipink.png"
             alt="Mi's Photobooth LOGO" 
             class="h-16 sm:h-20 md:h-24 object-contain" 
             />
@@ -24,8 +24,7 @@
     <!-- Main -->
     <main class="flex flex-1 justify-center items-center px-4">
 
-        <form class="w-full max-w-md bg-pink-50 border border-pink-200 rounded-xl px-6 py-6">
-
+        <form (ngSubmit)="signup()" class="w-full max-w-md bg-pink-50 border border-pink-200 rounded-xl px-6 py-6">
             <!-- Title -->
             <h2 class="flex justify-center text-2xl mb-6 font-semibold">
                 Sign Up
@@ -37,8 +36,13 @@
                     Name:
                 </label>
 
-                <input type="text" placeholder="Name" required
-                    class="w-full border border-pink-200 rounded-xl px-4 py-2 text-sm sm:text-base focus:ring-1 focus:ring-pink-400 outline-none">
+                <input 
+                type="text"
+                placeholder="Name"
+                [(ngModel)]="user.name"
+                name="name"
+                required
+                class="w-full border border-pink-200 rounded-xl px-4 py-2 text-sm sm:text-base focus:ring-1 focus:ring-pink-400 outline-none">
             </div>
 
             <!-- Email -->
@@ -47,8 +51,13 @@
                     Email:
                 </label>
 
-                <input type="email" placeholder="Email" required
-                    class="w-full border border-pink-200 rounded-xl px-4 py-2 text-sm sm:text-base focus:ring-1 focus:ring-pink-400 outline-none">
+               <input 
+                type="email"
+                placeholder="Email"
+                [(ngModel)]="user.email"
+                name="email"
+                required
+                class="w-full border border-pink-200 rounded-xl px-4 py-2 text-sm sm:text-base focus:ring-1 focus:ring-pink-400 outline-none">
             </div>
 
             <!-- Password -->
@@ -57,15 +66,26 @@
                     Password:
                 </label>
 
-                <input type="password" placeholder="Password" required
-                    class="w-full border border-pink-200 rounded-xl px-4 py-2 mb-3 text-sm sm:text-base focus:ring-1 focus:ring-pink-400 outline-none">
-                <input type="password" placeholder="Confirm Password" required
-                    class="w-full border border-pink-200 rounded-xl px-4 py-2 text-sm sm:text-base focus:ring-1 focus:ring-pink-400 outline-none">
+                <input 
+                type="password"
+                placeholder="Password"
+                [(ngModel)]="user.password"
+                name="password"
+                required
+                class="w-full border border-pink-200 rounded-xl px-4 py-2 mb-3 text-sm sm:text-base focus:ring-1 focus:ring-pink-400 outline-none">
+
+                <input 
+                type="password"
+                placeholder="Confirm Password"
+                [(ngModel)]="user.confirmPassword"
+                name="confirmPassword"
+                required
+                class="w-full border border-pink-200 rounded-xl px-4 py-2 text-sm sm:text-base focus:ring-1 focus:ring-pink-400 outline-none">
             </div>
 
             <!-- Button -->
-            <button type="button" (click)="signup()"
-                class="w-full bg-[#ffa2c6] text-white hover:bg-pink-100 hover:text-pink-300 font-semibold py-3 px-4 rounded-xl transition text-sm sm:text-base mb-4">
+            <button type="submit"
+            class="w-full bg-[#ffa2c6] text-white hover:bg-pink-100 hover:text-pink-300 font-semibold py-3 px-4 rounded-xl transition text-sm sm:text-base mb-4">
                 Create Account
             </button>
 
