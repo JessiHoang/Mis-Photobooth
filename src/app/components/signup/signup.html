@@ -1,108 +1,113 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Sign Up Page</title>
     <script src="https://cdn.tailwindcss.com"></script>
-</head>
+  </head>
 
-<body class="min-h-screen flex flex-col">
-
+  <body class="min-h-screen flex flex-col">
     <!-- Header -->
     <header>
-        <nav class="max-w-7xl mx-auto px-4 py-4 flex justify-center">
-            <img 
-            src="/img/logoMipink.png"
-            alt="Mi's Photobooth LOGO" 
-            class="h-16 sm:h-20 md:h-24 object-contain" 
-            />
-        </nav>
+      <nav class="max-w-7xl mx-auto px-4 py-4 flex justify-center">
+        <img
+          src="/img/logoMipink.png"
+          alt="Mi's Photobooth LOGO"
+          class="h-16 sm:h-20 md:h-24 object-contain"
+        />
+      </nav>
     </header>
 
     <!-- Main -->
     <main class="flex flex-1 justify-center items-center px-4">
+      <form
+        (ngSubmit)="signup()"
+        class="w-full max-w-md bg-pink-50 border border-pink-200 rounded-xl px-6 py-6"
+      >
+        <!-- Title -->
+        <h2 class="flex justify-center text-2xl mb-6 font-semibold">Sign Up</h2>
 
-        <form (ngSubmit)="signup()" class="w-full max-w-md bg-pink-50 border border-pink-200 rounded-xl px-6 py-6">
-            <!-- Title -->
-            <h2 class="flex justify-center text-2xl mb-6 font-semibold">
-                Sign Up
-            </h2>
+        <!-- Name -->
+        <div class="mb-4">
+          <label class="block mb-1 text-sm sm:text-base" for="name">
+            Name:
+          </label>
 
-            <!-- Name -->
-            <div class="mb-4">
-                <label class="block mb-1 text-sm sm:text-base" for="name">
-                    Name:
-                </label>
+          <input
+            type="text"
+            placeholder="Name"
+            [(ngModel)]="user.name"
+            name="name"
+            required
+            class="w-full border border-pink-200 rounded-xl px-4 py-2 text-sm sm:text-base focus:ring-1 focus:ring-pink-400 outline-none"
+          />
+        </div>
 
-                <input 
-                type="text"
-                placeholder="Name"
-                [(ngModel)]="user.name"
-                name="name"
-                required
-                class="w-full border border-pink-200 rounded-xl px-4 py-2 text-sm sm:text-base focus:ring-1 focus:ring-pink-400 outline-none">
-            </div>
+        <!-- Email -->
+        <div class="mb-4">
+          <label class="block mb-1 text-sm sm:text-base" for="email">
+            Email:
+          </label>
 
-            <!-- Email -->
-            <div class="mb-4">
-                <label class="block mb-1 text-sm sm:text-base" for="email">
-                    Email:
-                </label>
+          <input
+            type="email"
+            placeholder="Email"
+            [(ngModel)]="user.email"
+            name="email"
+            required
+            class="w-full border border-pink-200 rounded-xl px-4 py-2 text-sm sm:text-base focus:ring-1 focus:ring-pink-400 outline-none"
+          />
+        </div>
 
-               <input 
-                type="email"
-                placeholder="Email"
-                [(ngModel)]="user.email"
-                name="email"
-                required
-                class="w-full border border-pink-200 rounded-xl px-4 py-2 text-sm sm:text-base focus:ring-1 focus:ring-pink-400 outline-none">
-            </div>
+        <!-- Password -->
+        <div class="mb-4">
+          <label class="block mb-1 text-sm sm:text-base" for="password">
+            Password:
+          </label>
 
-            <!-- Password -->
-            <div class="mb-4">
-                <label class="block mb-1 text-sm sm:text-base" for="password">
-                    Password:
-                </label>
+          <input
+            type="password"
+            placeholder="Password"
+            [(ngModel)]="user.password"
+            name="password"
+            required
+            class="w-full border border-pink-200 rounded-xl px-4 py-2 mb-3 text-sm sm:text-base focus:ring-1 focus:ring-pink-400 outline-none"
+          />
 
-                <input 
-                type="password"
-                placeholder="Password"
-                [(ngModel)]="user.password"
-                name="password"
-                required
-                class="w-full border border-pink-200 rounded-xl px-4 py-2 mb-3 text-sm sm:text-base focus:ring-1 focus:ring-pink-400 outline-none">
+          <input
+            type="password"
+            placeholder="Confirm Password"
+            [(ngModel)]="user.confirmPassword"
+            name="confirmPassword"
+            required
+            class="w-full border border-pink-200 rounded-xl px-4 py-2 text-sm sm:text-base focus:ring-1 focus:ring-pink-400 outline-none"
+          />
+        </div>
 
-                <input 
-                type="password"
-                placeholder="Confirm Password"
-                [(ngModel)]="user.confirmPassword"
-                name="confirmPassword"
-                required
-                class="w-full border border-pink-200 rounded-xl px-4 py-2 text-sm sm:text-base focus:ring-1 focus:ring-pink-400 outline-none">
-            </div>
+        <!-- Button -->
+        <button
+          type="submit"
+          class="w-full bg-[#ffa2c6] text-white hover:bg-pink-100 hover:text-pink-300 font-semibold py-3 px-4 rounded-xl transition text-sm sm:text-base mb-4"
+        >
+          Create Account
+        </button>
 
-            <!-- Button -->
-            <button type="submit"
-            class="w-full bg-[#ffa2c6] text-white hover:bg-pink-100 hover:text-pink-300 font-semibold py-3 px-4 rounded-xl transition text-sm sm:text-base mb-4">
-                Create Account
-            </button>
-
-            <!-- Link to the SignIn Page -->
-            <p class="text-center">
-               <a routerLink="/signin">sign in</a>
-            </p>
-
-        </form>
-
+        <!-- Link to the SignIn Page -->
+        <p class="text-center">
+          <a
+            routerLink="/signin"
+            class="text-[#ffa2c6] underline text-sm sm:text-base cursor-pointer"
+          >
+            sign in
+          </a>
+        </p>
+      </form>
     </main>
 
     <!-- Footer -->
     <footer class="border-t border-gray-200 py-6 flex justify-center">
-        <p>Copyright © 2026 Mi Hoang</p>
+      <p>Copyright © 2026 Mi Hoang</p>
     </footer>
-
-</body>
-
+  </body>
 </html>
